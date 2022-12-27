@@ -1,0 +1,72 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var pantalla = document.querySelector('canvas');
+    var pincel = pantalla.getContext('2d');
+
+    pincel.fillStyle = 'lightblue';
+    pincel.fillRect(0, 0, 600, 400);
+    pincel.strokeStyle = "black"
+    pincel.strokeRect(0, 0, 600, 400);
+
+    // Diseñando la paleta de colores
+
+    pincel.fillStyle = "red";
+    pincel.fillRect(0, 0, 50, 50);
+
+    pincel.fillStyle = "green";
+    pincel.fillRect(50, 0, 50, 50);
+
+    pincel.fillStyle = "blue";
+    pincel.fillRect(100, 0, 50, 50);
+
+    var puedoDibujar = false;
+    var counter = 0;
+
+    function dibujarCirculo(evento) {
+
+        if(puedoDibujar) {
+            var x = evento.pageX - pantalla.offsetLeft;
+            var y = evento.pageY - pantalla.offsetTop;
+            pincel.fillStyle = colorChoose();
+            pincel.beginPath();
+            pincel.arc(x, y, 5, 0, 2 * 3.14);
+            pincel.fill();
+        }
+
+    }
+
+    function colorChoose() {
+                colores = ["blue", "red", "green"]
+                console.log(colores[counter])
+                return colores[counter]
+            }
+
+    function colorChanger() {
+
+        console.log("Cambio de color" + counter)
+        if (counter < 2) {
+            counter ++;
+        }
+        else if (counter >= 2){
+            counter = 0
+        }
+    }
+
+    pantalla.onmousemove = dibujarCirculo;
+
+    function habilitarDibujar() {
+
+        puedoDibujar = true;
+    }
+
+    function deshabilitarDibujar() {
+
+        puedoDibujar = false;
+    }
+
+    pantalla.onmousedown = habilitarDibujar;
+
+    pantalla.onmouseup = deshabilitarDibujar;
+
+</script>
