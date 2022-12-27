@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+
+<h1>Recetas de Armando </h1>
+
+<script>
+
+  function imprimir(frase) {
+    document.write(frase)
+    document.write('<br>')
+  }
+
+  function ordenar(ingredientes) {
+
+    var lista_ingredientes = [];
+    var cantidad = ingredientes;
+    var contador = 1;
+
+    while (contador <= cantidad) {
+      var nuevo_ingrediente = prompt('Ingrese el ingrediente ' + contador + ' de ' + cantidad);
+      var existe = false;
+
+      for (posicion = 0; posicion < lista_ingredientes.length; posicion++) {
+        if (nuevo_ingrediente == lista_ingredientes[posicion]) {
+          existe = true;
+          alert('Ingrediente repetido: ' + nuevo_ingrediente);
+          break;
+        }
+      }
+
+      if (existe == false) {
+        lista_ingredientes.push(nuevo_ingrediente);
+        contador++;
+      }
+    }
+    console.log(lista_ingredientes);
+  }
+
+  var ingredientes = prompt('¿Cuántos ingredientes desea?')
+  ordenar(ingredientes);
+
+</script>

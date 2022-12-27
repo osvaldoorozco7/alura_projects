@@ -1,0 +1,18 @@
+<meta charset="UTF-8">
+
+<input type="text">
+<button>Enviar</button>
+
+<script>
+    nombre = document.querySelector('input')
+    nombre.focus()
+
+    function imprimir(name) {
+        alert("Hola, " + nombre.value);
+        nombre.value = ""
+    }
+
+    var boton_2 = document.querySelector("button");
+    boton_2.onclick = imprimir;
+
+</script>

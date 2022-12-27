@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+
+        <canvas width="600" height="400"></canvas>
+
+        <script>
+
+            function saltarLinea() {
+                document.write("<br>");    
+                document.write("<br>");    
+                document.write("<br>");    
+            }
+
+            function square_maker(pos_x, pos_y, color) {
+                var pantalla = document.querySelector("canvas");
+                var pincel = pantalla.getContext("2d");
+                pincel.fillStyle = color;
+                pincel.fillRect(pos_x, pos_y, 50, 50);
+                pincel.strokeStyle = "black";
+                pincel.strokeRect(pos_x, pos_y, 50, 50);
+            }
+
+            function repeater(numero, color) {
+
+                x = 0;
+                y = 0;
+
+                for (let i = 0; i < numero; i++) {
+                    square_maker(x, y, color);
+                    x = x + 50;
+                }
+            }
+
+            repeater(10, "lightblue");
+
+        </script>
+    </body>
+</html>

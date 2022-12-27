@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+
+
+<script>
+
+    var usuario = "alura";
+    var contrasenha = "alura123";
+
+
+    var intentos = 3;
+    var contador = 1;
+
+    while (contador <= intentos) {
+
+        var usuario_ingresado = prompt("Ingrese su usuario: ");
+        var contrasenha_ingresada = prompt("Ingrese su contraseña: ");
+
+        if ( usuario_ingresado == usuario && contrasenha_ingresada == contrasenha) {
+            alert('Acceso correcto, bienvenido.')
+            break;
+        }
+        else if (usuario_ingresado != usuario && contrasenha_ingresada == contrasenha) {
+            alert("Usuario no encontrado, intente de nuevo.")
+        }
+        else if (usuario_ingresado == usuario && contrasenha_ingresada != contrasenha) {
+            alert("Contraseña incorrecta, intente de nuevo.")
+        }
+        else {
+            alert("Error, intente de nuevo.")
+        }
+        contador ++;
+    }
+
+    if (contador == intentos) {
+        alert("Usuario bloqueado, intente de nuevo más tarde.")
+    }
+
+</script>

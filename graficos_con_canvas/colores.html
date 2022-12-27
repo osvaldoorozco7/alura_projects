@@ -1,0 +1,32 @@
+<canvas width="800" height="400"> </canvas>
+
+<img src="/Diego-Maradona.svg" alt="">
+
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+
+    pincel.strokeStyle = "black";
+    pincel.strokeRect(299, 9, 302, 152);
+    
+    pincel.fillStyle = "lightblue";
+    pincel.fillRect(300, 10, 300, 50);
+    
+    pincel.fillStyle = "lightblue";
+    pincel.fillRect(300, 110, 300, 50);
+
+    pincel.fillStyle = "yellow";
+    pincel.beginPath();
+    pincel.arc(450, 85, 20, 0, 2*3.14);
+    pincel.fill();
+
+    var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        pincel.font="15px Georgia";
+        pincel.fillStyle="black";
+        pincel.fillText("¡Dale campeooooooooon!", 370, 200);
+
+
+
+</script>

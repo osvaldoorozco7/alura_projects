@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+
+        <canvas height="600" width="400"></canvas>
+
+        <script>
+            var pantalla = document.querySelector("canvas");
+            var pincel = pantalla.getContext('2d');
+
+            // Triángulo negro
+            pincel.fillStyle = "black";
+            pincel.beginPath();
+            pincel.moveTo(50, 50);
+            pincel.lineTo(50, 400);
+            pincel.lineTo(400, 400);
+            pincel.fill();
+
+            // Triángulo blanco
+            pincel.fillStyle = "white";
+            pincel.beginPath();
+            pincel.moveTo(100, 175);
+            pincel.lineTo(100, 350);
+            pincel.lineTo(275, 350);
+            pincel.fill();
+
+
+
+        </script>
+    </body>
+</html>

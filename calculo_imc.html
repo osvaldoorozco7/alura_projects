@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA IMC</h1>
+
+<script>
+    function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+
+    function saltarLinea() {
+        document.write('<br>');
+        document.write('<br>');
+        document.write('<br>');
+    }
+
+    pesoOsvaldo = 82;
+    alturaOsvaldo = 1.77;
+    imc = pesoOsvaldo / (alturaOsvaldo * alturaOsvaldo)
+
+    imprimir("El IMC de Osvaldo es de: " + imc)
+
+</script>

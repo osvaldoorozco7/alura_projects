@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+
+        <canvas width="600" height="400"></canvas>
+
+        <script>
+
+            // Configurando área de trabajo.
+            var pantalla = document.querySelector("canvas");
+            var pincel = pantalla.getContext("2d");
+
+            pincel.fillStyle = "lightblue";
+            pincel.fillRect(0, 0, 600, 400);
+
+            var xAlt = coordenadasAlt(600)
+            var yAlt = coordenadasAlt(400)
+
+
+            function coordenadasAlt(limite) {
+                return Math.floor(Math.random() * limite)
+            }
+
+            function actualizarPantalla() {
+                console.log(xAlt)
+                console.log(yAlt)
+            }
+
+            setInterval(actualizarPantalla, 100)
+
+        </script>
+    </body>
+</html>
